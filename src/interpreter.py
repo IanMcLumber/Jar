@@ -34,10 +34,10 @@ if __name__ == "__main__":
     from parser import simple_tokenize, Parser
 
     code = '''
-начало
-    дай "Здравей, свят!"
-    върни 42
-край
+дейба
+    чурки "Здравей, свят!"
+    майнатаму 42
+майкаму
 '''
     tokens = simple_tokenize(code)
     parser = Parser(tokens)
