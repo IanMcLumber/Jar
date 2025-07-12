@@ -2,7 +2,7 @@ import re
 
 # === Описание на токени ===
 TOKEN_TYPES = [
-    ("KEYWORD", r"\b(начало|край|дай|ако|иначе|върни)\b"),
+    ("KEYWORD", r"\b(дейба|майкаму|чурки|шейба|ебиго|майнатаму)\b"),
     ("NUMBER", r"\b\d+(\.\d+)?\b"),
     ("STRING", r"\".*?\""),
     ("IDENTIFIER", r"\b[а-яА-Я_][а-яА-Я0-9_]*\b"),
@@ -44,10 +44,10 @@ def tokenize(code):
 # === Примерен ЖАР код ===
 if __name__ == "__main__":
     code = '''
-начало
-    дай "Здравей, свят!"
-    върни 42
-край
+дейба
+    чурки "Здравей, свят!"
+    майнатаму 42
+майкаму
 '''
     result = tokenize(code)
     for token in result:
@@ -65,7 +65,7 @@ class Token:
 
 def tokenize(code: str) -> List[Token]:
     token_specification = [
-        ("KEYWORD", r"\b(начало|край|дай|ако|иначе|върни)\b"),
+        ("KEYWORD", r"\b(дейба|майкаму|чурки|шейба|ебиго|майнатаму)\b"),
         ("NUMBER", r"\b\d+\b"),
         ("STRING", r'"[^"]*"'),
         ("IDENTIFIER", r"\b[а-яА-Я_][а-яА-Я0-9_]*\b"),
@@ -81,7 +81,7 @@ def tokenize(code: str) -> List[Token]:
         if kind == "SKIP":
             continue
         elif kind == "MISMATCH":
-            raise RuntimeError(f"Непознат символ: {value}")
+            raise RuntimeError(f"Компот символ: {value}")
         else:
             tokens.append(Token(kind, value))
     return tokens
